@@ -46,17 +46,16 @@ I am facing problems trying to get the Perpetual Futures data, however, assuming
 
 1. Retrieve all the Price data for BTCUSDT spot price, calendar futures and perpetual futures along with the associated Funding Rate.
 2. Merge the 3 Price Data and then align the Funding Rate Data with the combined graph to analyze the spreads between Spot vs Calendar Futures, and Spot vs Perps.
-3. Calculate the spread between quarterly and perpetual futures prices
-    spread = quarterly_close_price - perpetual_close_price 
+3. Calculate the spread between calendar and perpetual futures prices 
 4. Analyze the impact of funding rates on perpetual futures prices
 5. Then based on the analysis from the Funding Rate and Price Data, I would define a min_threshold for my trading strategy.
 6. Finally, I would generate trading signals based on spread
      - Generate trading signals based on the calculated spread:
       ```python
       if spread > spread_threshold:
-          signal = -1  # Short quarterly, long perpetual
+          signal = -1  # Short calendar futures, long perpetual
       elif spread < -spread_threshold:
-          signal = 1  # Long quarterly, short perpetual
+          signal = 1  # Long calendar futures, short perpetual
       else:
           signal = 0  # No action
 
