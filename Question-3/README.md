@@ -1,6 +1,4 @@
-# Task 1: Understanding the Funding Rate in Perpetual Futures
-
-## What is the funding rate associated with a perpetual future?
+# Task 1: What is the funding rate associated with a perpetual future?
 The funding rate in perpetual futures is a periodic payment exchanged between traders holding long and short positions. This mechanism ensures that the price of the perpetual futures contract remains close to the underlying asset's spot price.
 
 ## Funding Rate Calculation Logic
@@ -29,3 +27,18 @@ Funding Rate (F) = Average Premium Index (P) + clamp (interest rate - Premium In
 - The `Interest Rate` component is fixed, while the `Premium Index` varies based on market conditions and the difference between bid/ask prices and the price index.
 
 By understanding and using these components, traders can better anticipate the costs or earnings associated with holding perpetual futures positions.
+
+# Task 2: How would you calculate an implied funding rate (or implied interest rate) for a calendar future? 
+
+The implied funding rate can be derived from the difference between the calendar futures price and the spot price, adjusted for the time to maturity.
+
+The formula for the implied funding rate is:
+
+\[
+\text{Implied Funding Rate} = \left(\frac{\text{calendar\_future\_price}}{\text{spot\_price}}\right)^{\frac{1}{\text{time\_to\_maturity\_years}}} - 1
+\]
+
+Where:
+- \(\text{calendar\_future\_price}\) is the price of the calendar future.
+- \(\text{spot\_price}\) is the spot price.
+- \(\text{time\_to\_maturity\_years}\) is the time to maturity of the future in years.
