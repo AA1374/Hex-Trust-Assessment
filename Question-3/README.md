@@ -34,11 +34,11 @@ The implied funding rate can be derived from the difference between the calendar
 
 The formula for the implied funding rate is:
 
-\[
-\text{Implied Funding Rate} = \left(\frac{\text{calendar\_future\_price}}{\text{spot\_price}}\right)^{\frac{1}{\text{time\_to\_maturity\_years}}} - 1
-\]
+`implied_funding_rate = (calendar_future_price / spot_price) ** (1 / time_to_maturity_years) - 1`
 
 Where:
-- \(\text{calendar\_future\_price}\) is the price of the calendar future.
-- \(\text{spot\_price}\) is the spot price.
-- \(\text{time\_to\_maturity\_years}\) is the time to maturity of the future in years.
+- `calendar_future_price` is the price of the calendar future.
+- `spot_price` is the spot price.
+- `time_to_maturity_years` is the time to maturity of the future in years.
+
+#Task 3:
