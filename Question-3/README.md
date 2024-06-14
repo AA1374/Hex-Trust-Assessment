@@ -12,9 +12,7 @@ The funding rate in perpetual futures is a periodic payment exchanged between tr
 ### Key Definitions:
 - **Impact Margin Notional (IMN)**: Defined as 200 USDT divided by the initial margin rate at the maximum leverage level.
 - **Premium Index (P)**: Calculated as:
-  \[
-  P = \frac{\max(0, \text{Impact Bid Price} - \text{Price Index}) - \max(0, \text{Price Index} - \text{Impact Ask Price})}{\text{Price Index}}
-  \]
+Premium Index (P) = [ Max(0, Impact Bid Price - Price Index ) - Max(0, Price Index - Impact Ask Price)] / Price Index
 
 ### Impact Prices:
 - **Impact Bid Price**: The average fill price to execute the Impact Margin Notional at the Bid Price.
@@ -23,9 +21,8 @@ The funding rate in perpetual futures is a periodic payment exchanged between tr
 
 ### Funding Rate Formula:
 The funding rate (F) is calculated using the following formula:
-\[
-F = \text{Average Premium Index (P)} + \text{clamp} (\text{interest rate} - \text{Premium Index (P)}, 0.05\%, -0.05\%)
-\]
+
+Funding Rate (F) = Average Premium Index (P) + clamp (interest rate - Premium Index (P), 0.05%, -0.05%)
 
 ### Notes:
 - The `clamp` function ensures that the funding rate adjustment is within the range of -0.05% to 0.05%.
